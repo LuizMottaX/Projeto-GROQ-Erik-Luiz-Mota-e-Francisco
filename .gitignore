@@ -1,0 +1,68 @@
+# =============================================================
+# Ditado — arquivos que NÃO devem ir para o repositório
+# Vale para todo o monorepo (raiz, backend/ e frontend/).
+# =============================================================
+
+# --- Dependências (reinstaladas com npm install / setup.sh) ---
+node_modules/
+
+# --- Builds e caches de compilação ---
+dist/
+dist-ssr/
+build/
+*.tsbuildinfo
+.vite/
+.cache/
+.eslintcache
+
+# --- Testes e cobertura ---
+coverage/
+test-results/
+playwright-report/
+
+# --- Segredos ---
+# .env contém GROQ_API_KEY, JWT_SECRET e senhas. Só o modelo é versionado.
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+id_rsa*
+secrets/
+
+# --- Áudios de usuários/teste (o app não persiste áudio) ---
+uploads/
+*.mp3
+*.wav
+*.m4a
+*.ogg
+*.opus
+*.flac
+*.webm
+*.mpga
+
+# --- Dados locais de banco (o PostgreSQL usa volume Docker) ---
+pgdata/
+*.sql.gz
+*.dump
+
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Editor / Sistema operacional ---
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.sw?
+.DS_Store
+Thumbs.db
