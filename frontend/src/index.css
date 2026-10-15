@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+/* Tailwind v4: tokens do tema definidos em CSS (não há tailwind.config.js). */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: oklch(0.97 0.02 275);
+  --color-brand-100: oklch(0.94 0.04 275);
+  --color-brand-200: oklch(0.88 0.08 275);
+  --color-brand-500: oklch(0.6 0.2 275);
+  --color-brand-600: oklch(0.52 0.22 275);
+  --color-brand-700: oklch(0.45 0.2 275);
+  --color-brand-900: oklch(0.28 0.12 275);
+}
+
+@layer base {
+  html {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
