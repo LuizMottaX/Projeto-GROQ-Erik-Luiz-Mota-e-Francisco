@@ -34,6 +34,9 @@ export function assertValidAudio(
     file.mimetype.startsWith('audio/') ||
     file.mimetype === 'video/mp4' ||
     file.mimetype === 'video/webm' ||
+    // Alguns navegadores (ex.: Firefox) enviam .ogg como video/ogg ou application/ogg.
+    file.mimetype === 'video/ogg' ||
+    file.mimetype === 'application/ogg' ||
     file.mimetype === 'application/octet-stream';
 
   if (!ALLOWED_AUDIO_EXTENSIONS.includes(extension) || !mimeOk) {
